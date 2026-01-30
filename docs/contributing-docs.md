@@ -21,9 +21,9 @@ Order tips:
 
 ## PR Workflow
 
-We use the main West Coast Mesh repo for all changes: `https://github.com/chrisdavis2110/wcmeshdocs`.
+We use the main West Coast Mesh repo for all changes: `https://github.com/chrisdavis2110/WCMesh-Docs.git`.
 
-Create your own fork, make changes there, and open a pull request from your fork back to `chrisdavis2110/wcmeshdocs`.
+Create your own fork, make changes there, and open a pull request from your fork back to `chrisdavis2110/WCMesh-Docs`.
 
 Keep PRs focused on a single doc change or topic, and include a clear summary of what you updated.
 
