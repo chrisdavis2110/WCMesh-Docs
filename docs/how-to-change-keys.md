@@ -24,7 +24,9 @@ Go to the appropriate #repeater-control channel for your region:
 
 [Central Valley](https://discord.com/channels/1350515855942881442/1454500129628487784)
 
-***ALL PREFIXES IN SOCAL HAVE BEEN TAKEN. WE ARE WORKING ON A NEW SOLUTION***
+:::info
+ALL PREFIXES IN SOCAL HAVE BEEN TAKEN. WE ARE WORKING ON A NEW SOLUTION
+:::
 
 Run the `/open` command to find an open 2 character prefix (1 byte) for your new key.
 
