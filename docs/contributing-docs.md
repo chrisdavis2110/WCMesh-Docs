@@ -1,13 +1,13 @@
 # Contributing Documentation
 
-This page explains how to add or edit docs for the West COast Mesh site, how to open a PR to the main repo, and the style rules we follow.
+This page explains how to add or edit docs for the West Coast Mesh site, how to open a PR to the main repo, and the style rules we follow.
 
 ---
 
 ## Where Docs Live
 
 - All docs are in `docs/`.
-- Subfolders become sections in the sidebar (e.g., `MeshCore`, `Node-Builds`).
+- Subfolders become sections in the sidebar (e.g., `Getting Started`, `Node-Builds`).
 - File names become URLs, so use short, clear, kebab-case names.
 
 Example: `docs/MeshCore/meshcore-mqtt.md` shows up as `/docs/MeshCore/meshcore-mqtt`.
@@ -85,8 +85,8 @@ npm run start
 
 ## Images and Assets
 
-- Put images in an `assets/` folder next to the doc when possible.
-- Use relative paths like `./assets/your-image.png`.
+- create a folder in `assets/` that matches your doc title.
+- Use relative paths like `./assets/your-doc/your-image.png`.
 - Add alt text so the image is accessible.
 
 ---

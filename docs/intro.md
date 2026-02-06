@@ -2,46 +2,35 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Welcome to West Coast Mesh
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Welcome to the **West Coast Mesh** wiki! We're a community of hobbyists and radio enthusiasts exploring **MeshCore**, an exciting new mesh network technology that enables decentralized communication and networking.
+
+## What is MeshCore?
+
+MeshCore is a cutting-edge mesh networking technology that allows devices to communicate directly with each other, creating resilient, decentralized networks. Whether you're interested in emergency communications, off-grid networking, or just exploring new technologies, MeshCore provides a powerful platform for building community networks.
 
 ## Getting Started
 
-Get started by **creating a new site**.
+This wiki will guide you through everything you need to know to get started with MeshCore and join the West Coast Mesh network. Here's what you'll learn:
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+### Getting Started with Devices
+Learn about compatible devices, hardware requirements, and how to choose the right equipment for your mesh network setup.
 
-### What you'll need
+### Installing Firmware
+Step-by-step guides to flash MeshCore firmware onto your devices, including troubleshooting tips and best practices.
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+### Connecting to Our Settings
+Configure your devices to connect to the West Coast Mesh network settings, ensuring seamless integration with our community network.
 
-## Generate a new site
+### Talking on the Mesh
+Discover how to communicate over the mesh network, including messaging, and other communication protocols.
 
-Generate a new Docusaurus site using the **classic template**.
+### Using Various Apps
+Explore the ecosystem of applications available for MeshCore, from communication tools to network monitoring and management utilities.
 
-The classic template will automatically be added to your project after you run the command:
+## Ready to Begin?
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+Navigate through the sidebar to find detailed guides on each topic. Whether you're a complete beginner or an experienced mesh networking enthusiast, you'll find the information you need to get started.
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+**Happy meshing!**
