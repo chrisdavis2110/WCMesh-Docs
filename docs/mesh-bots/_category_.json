@@ -1,0 +1,8 @@
+{
+  "label": "Mesh Bots",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "Bots used on Discord and the mesh network"
+  }
+}
