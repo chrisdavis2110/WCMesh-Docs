@@ -34,7 +34,7 @@ The OTA update process differs depending on your device's hardware platform. Cho
 
 ### nRF-based Boards (RAK, T114, Seed XIAO)
 
-**[Update nRF-based boards →](./rak.md)**
+**[Update nRF-based boards →](./nrf.md)**
 
 This guide covers:
 - Downloading the firmware (.ZIP file)
