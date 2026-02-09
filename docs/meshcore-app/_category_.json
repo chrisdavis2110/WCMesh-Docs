@@ -1,0 +1,8 @@
+{
+  "label": "MeshCore App",
+  "position": 7,
+  "link": {
+    "type": "doc",
+    "id": "meshcore-app/index"
+  }
+}

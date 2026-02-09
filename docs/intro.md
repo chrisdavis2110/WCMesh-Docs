@@ -1,4 +1,6 @@
 ---
+id: welcome
+title: Welcome to West Coast Mesh
 sidebar_position: 1
 ---
 

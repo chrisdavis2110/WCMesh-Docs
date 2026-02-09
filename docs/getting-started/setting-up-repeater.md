@@ -23,12 +23,12 @@ The top section is the **Repeater Information**. This displays important details
 
 Look at the public key. The first 2 characters (1st byte or hex prefix) is what will be used as for the path in packets. If your prefix collides with a another repeater, we kindly ask to [change you key](../how-to-change-keys.md). Please visit our [Discord](https://discord.gg/wcmesh) to get set up with a new key.
 
-|Button|Description|
+| Button | Description |
 |---|---|
-|Send Advert|Sends a flood advert of your repeater's name, public key, and location across the mesh. |
-|Start OTA|Can be used to upgrade firmware without the flasher|
-|Reboot|Reboots device|
-|Factory Reset|Erases device. Restores factory defaults|
+| **Send Advert** | Sends a flood advert of your repeater's name, public key, and location across the mesh |
+| **Start OTA** | Can be used to upgrade firmware without the flasher |
+| **Reboot** | Reboots device |
+| **Factory Reset** | Erases device. Restores factory defaults |
 
 
 ## Name and Location
@@ -56,13 +56,13 @@ Finally, configure the **Radio Settings** for your repeater. This is how your re
 ![Repeater Settings](../assets/repeater/repeater_settings.PNG)
 
 Adjust the settings according to your network region. Not everyone uses the US Defaults. Here's a list of freqencies used my West Coast Mesh regions:
-|Region|Frequency|Bandwidth|Spreading Factor|Coding Rate*|
+| Region | Frequency | Bandwidth | Spreading Factor | Coding Rate* |
 |---|---|---|---|---|
-|SoCal|927.875|62.5|7|5|
-|Bay Area (default)|910.525|62.5|7|5|
-|Sacramento-Foothills|909.875|62.5|9|5|
-|Central Valley (default)|910.525|62.5|7|5|
-|Pacific Northwest (default)|910.525|62.5|7|5|
+| **SoCal** | 927.875 | 62.5 | 7 | 5 |
+| **Bay Area (default)** |910.525|62.5|7|5|
+| **Sacramento-Foothills** |909.875|62.5|9|5|
+| **Central Valley (default)** |910.525|62.5|7|5|
+| **Pacific Northwest (default)** |910.525|62.5|7|5|
 
 **Coding Rate* is per device specific. You can be on a different coding rate and still reach the mesh. Every other parameter has to match.
 

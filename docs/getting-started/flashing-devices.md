@@ -21,12 +21,12 @@ After selecting your device, you need to **choose a device role** for your devic
 ![Device Roles](../assets/flashing/device_roles.PNG)
 
 Select the appropriate role based on your intended use case:
-|Role|Description|
+| Role | Description |
 |---|---|
-|Companion Bluetooth|Most common chat client node that pairs with your phone via bluetooth|
-|Companion USB|Chat client node that connects to a computer via USB (bluetooth not enabled)|
-|Repeater|Infrastructure node that extends network range by relaying messages between mesh nodes|
-|Room Server|Node that acts as a bulletin board to store messages (can also be used as a repeater)|
+| **Companion Bluetooth** | Most common chat client node that pairs with your phone via bluetooth |
+| **Companion USB** | Chat client node that connects to a computer via USB (bluetooth not enabled) |
+| **Repeater** | Infrastructure node that extends network range by relaying messages between mesh nodes |
+| **Room Server** | Node that acts as a bulletin board to store messages (can also be used as a repeater) |
 
 ## Step 3: Erase and Flash or Download
 

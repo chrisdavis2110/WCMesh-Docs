@@ -16,13 +16,10 @@ The quickest way to find an open prefix is to use MeshBuddy on Discord.
 
 Go to the appropriate #repeater-control channel for your region:
 
-[SoCal](https://discord.com/channels/1350515855942881442/1424049467241402531)
-
-[Bay Area](https://discord.com/channels/1350515855942881442/1442733640705376437)
-
-[Sacramento-Foothills](https://discord.com/channels/1350515855942881442/1442733667062648934)
-
-[Central Valley](https://discord.com/channels/1350515855942881442/1454500129628487784)
+- **SoCal**: [SoCal Repeater Control](https://discord.com/channels/1350515855942881442/1424049467241402531)
+- **Bay Area**: [Bay Area Repeater Control](https://discord.com/channels/1350515855942881442/1442733640705376437)
+- **Sacramento-Foothills**: [Sacramento-Foothills Repeater Control](https://discord.com/channels/1350515855942881442/1442733667062648934)
+- **Central Valley**: [Central Valley Repeater Control](https://discord.com/channels/1350515855942881442/1454500129628487784)
 
 :::info
 ALL PREFIXES IN SOCAL HAVE BEEN TAKEN. WE ARE WORKING ON A NEW SOLUTION
