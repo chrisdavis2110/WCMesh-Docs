@@ -4,21 +4,21 @@ sidebar_position: 10
 
 # Public Channels
 
-This is a list of known hashtag channels on the mesh.
+This is a list of known hashtag channels on the mesh. To add hashtag channels in the MeshCore companion app, tap the three small dots in the upper right corner, tap on "Add channel", tap "Join a Hashtag Channel", then enter one of these hashtag channels one at a time for any that you want. You can also tap "Scan a QR Code" to scan the QR code on the images below.
 
 ## test
 For sending test and ack messages
 
 `9cd8fcf22a47333b591d96a2b848b73f`
 
-![test channel](./assets/public_channels/test.PNG)
+![test channel](./assets/public_channels/test.png)
 
 ## meshbud
 Your friendly neighborhood robot
 
 `c044b1a6e0799f7689bcaf82dbed6795`
 
-![meshbud channel](./assets/public_channels/meshbud.PNG)
+![meshbud channel](./assets/public_channels/meshbud.png)
 
 ## volcano
 San diego based mesh bot
@@ -40,6 +40,13 @@ Chat all things ham radio
 `83c8b01997654265938da8765cbc7db9`
 
 ![hamradio channel](./assets/public_channels/hamradio.png)
+
+## lakeforest
+Local chat for Lake Forest
+
+`444dc915efb613a88ae3bb650620089d`
+
+![lakeforest channel](./assets/public_channels/lakeforest.png)
 
 ## losangeles
 Local chat for Los Angeles County
@@ -75,6 +82,13 @@ Local chat for Santa Barbara County
 `76cf469b93e61bd4db1d4dbb4d32a7fb`
 
 ![sbcountymesh channel](./assets/public_channels/sbcounty.png)
+
+## southbay
+Local chat for South Bay
+
+`3c9e372b38917334d1091419f32bed8a`
+
+![southbay channel](./assets/public_channels/southbay.png)
 
 ## venturacounty
 Local chat for Ventura County
