@@ -21,7 +21,7 @@ Your friendly neighborhood robot
 ![meshbud channel](./assets/public_channels/meshbud.png)
 
 ## volcano
-San diego based mesh bot
+San Diego based mesh bot
 
 `ac89b14740496815cf2ccc99c3522330`
 
@@ -33,6 +33,20 @@ Emergency notifications and chat
 `e1ad578d25108e344808f30dfdaaf926`
 
 ![emergency channel](./assets/public_channels/emergency.png)
+
+## socal-incidents
+Local nonemergency notifications and chat
+
+`f9abfe2c166a009760e05a3e2e0fdf87`
+
+![socal-incidents channel](./assets/public_channels/socal-incidents.png)
+
+## emcommplanning
+Emergency communication planning
+
+`ed6ca1e071806f107eea4d94d3b4b92f`
+
+![emcommplanning channel](./assets/public_channels/emcommplanning.png)
 
 ## hamradio
 Chat all things ham radio
