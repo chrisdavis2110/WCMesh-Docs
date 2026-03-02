@@ -70,11 +70,13 @@ Some devices have an amp, so the TX power needs to be set accordingly. [Here](..
 
 ## Console Access
 
-If you need to access the console for advanced configuration or troubleshooting, you can use the console interface:
+It is highly recommended to change your advert intervals. You can do so via the console or repeater admin via the app.
+
+To access the console for advanced configuration or troubleshooting, you can use the console interface on the web flasher:
 
 ![MeshCore Flasher Console](../assets/repeater/meshcore_flasher_console.png)
 
-The console provides direct access to your repeater's command interface for advanced operations. Type a command, like 'set prv.key', next to the prompt.
+The console provides direct access to your repeater's command interface for advanced operations. Type a command, like `set prv.key`, next to the prompt.
 
 A list of repeater/room server commands can be found [here](../cli-reference.md). These commands can also be used via remote access.
 
@@ -82,6 +84,8 @@ A list of repeater/room server commands can be found [here](../cli-reference.md)
 
 Once you've completed the configuration:
 - Review your settings and click `Save settings`
+- Change your advert intervals: **Flood** 24-48hrs, **Direct** 0min.
+- After rebooting, **sync the clock**
 - Click on `Send Advert` so others can see your node.
 - It will begin relaying messages between mesh nodes (if configured as a Repeater)
 - It will store messages for retrieval (if configured as a Room Server)

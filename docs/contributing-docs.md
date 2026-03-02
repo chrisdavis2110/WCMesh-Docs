@@ -1,3 +1,7 @@
+---
+sidebar_position: 100
+---
+
 # Contributing Documentation
 
 This page explains how to add or edit docs for the West Coast Mesh site, how to open a PR to the main repo, and the style rules we follow.
