@@ -55,6 +55,13 @@ Chat all things ham radio
 
 ![hamradio channel](./assets/public_channels/hamradio.png)
 
+## inlandempire
+Local chat for the Inland Empire
+
+`4d74e629bd2743acfccc03065cfd2a72`
+
+![inlandempire channel](./assets/public_channels/ie.png)
+
 ## lakeforest
 Local chat for Lake Forest
 

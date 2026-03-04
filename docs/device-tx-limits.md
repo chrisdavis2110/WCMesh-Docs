@@ -5,6 +5,8 @@ sidebar_position: 5
 
 # Device TX Limits
 
+These list the tx setting in the radio you need to set to get a desired output power.
+
 ## Heltec v4
 
 |TX setting|Output|

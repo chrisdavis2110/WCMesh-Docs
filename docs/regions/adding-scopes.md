@@ -27,3 +27,38 @@ For how scope and regions work on the network, see [Region and Scope Filtering G
    ![Scope under channel name](../assets/regions/scope.png)
 
 Once set, messages you send and receive in that channel use that scope. Repeaters will only forward messages if they have that region defined and **flood allowed** (see [Adding Regions to Repeaters](adding-regions.md)).
+
+
+---
+
+## Ripple UI
+
+1. From the main screen, tap the **network name** to open network settings.
+
+   ![Ripple main](../assets/regions/ripple_main.bmp)
+
+2. Tap **Regions** to view the region list.
+
+   ![Ripple settings](../assets/regions/ripple_settings.bmp)
+
+3. You’ll see the current regions.
+
+   ![Ripple regions](../assets/regions/ripple_regions.bmp)
+
+4. Tap the **hamburger menu** (☰) in the top right to **add a region**. Regions you add here can be used when setting a channel’s scope.
+
+   ![Ripple add region](../assets/regions/ripple_add_region.bmp)
+
+5. From the **main screen**, tap the **channel name** you want to scope.
+
+6. Tap the **hamburger menu** (☰) in the top right.
+
+7. Choose **Set scope** to open the scope picker.
+
+   ![Ripple set scope](../assets/regions/ripple_set_scope.bmp)
+
+8. **Choose a scope** from the list, or **add a new region** if the one you want is not listed.
+
+   ![Ripple choose scope](../assets/regions/ripple_choose_scope.bmp)
+
+Once set, messages in that channel use that scope. Repeaters will only forward them if they have that region defined and **flood allowed** (see [Adding Regions to Repeaters](adding-regions.md)).

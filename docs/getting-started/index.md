@@ -62,6 +62,7 @@ West Coast Mesh operates across multiple regions, each with specific radio setti
 | **Bay Area** | 910.525 | 62.5 | 7 | 5 |
 | **Sacramento-Foothills** | 909.875 | 62.5 | 9 | 5 |
 | **Central Valley** | 910.525 | 62.5 | 7 | 5 |
+| **Central Coast** | 910.525 | 62.5 | 7 | 5 |
 | **Pacific Northwest** | 910.525 | 62.5 | 7 | 5 |
 
 **Coding Rate* is per device specific. You can be on a different coding rate and still reach the mesh. Every other parameter has to match.
