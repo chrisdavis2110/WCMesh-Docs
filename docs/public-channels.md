@@ -34,12 +34,12 @@ Emergency notifications and chat
 
 ![emergency channel](./assets/public_channels/emergency.png)
 
-## socal-incidents
-Local nonemergency notifications and chat
+## socalalert
+Local nonemergency notifications
 
-`f9abfe2c166a009760e05a3e2e0fdf87`
+`8a49a6c0626fbc48ac7a94309b421dc5`
 
-![socal-incidents channel](./assets/public_channels/socal-incidents.png)
+![socalalert channel](./assets/public_channels/socalalert.png)
 
 ## emcommplanning
 Emergency communication planning

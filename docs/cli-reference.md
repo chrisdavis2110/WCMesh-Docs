@@ -4,35 +4,17 @@ sidebar_position: 4
 
 # Repeater & Room Server CLI Reference
 
-You can configure both Repeater and Room Server devices either via Serial (and terminal app/putty/Serial Monitor), or via the CLI screen when accessing remotely.
-
-## Serial-only Commands
-
-### `set freq {frequency}`
-
-Sets the frequency.
-
-**Usage:**
-```
-set freq 927.875
-```
+You can configure both Repeater and Room Server devices either via **Serial** (terminal app, PuTTY, Serial Monitor) or via the **CLI screen** when accessing remotely. Some commands are **Serial only** as noted.
 
 ---
 
-### `time {epoch-secs}`
-
-Sets the time.
-
-**Usage:**
-```
-time 1738242833
-```
-
----
+## Serial Only Commands
 
 ### `erase`
 
-Completely erases the device's local file system.
+Erases the device (factory reset). **Serial only.**
+
+**Warning:** This is destructive!
 
 **Usage:**
 ```
@@ -41,20 +23,9 @@ erase
 
 ---
 
-### `log`
-
-Show complete packet log contents.
-
-**Usage:**
-```
-log
-```
-
----
-
 ### `get acl`
 
-Show list of authorised nodes in the Access Control List.
+Shows the list of authorised nodes in the Access Control List. **Serial only.**
 
 **Usage:**
 ```
@@ -63,13 +34,82 @@ get acl
 
 ---
 
+### `get prv.key`
+
+Views this node's identity (private key). **Serial only.**
+
+**Usage:**
+```
+get prv.key
+```
+**Note:** `set prv.key` is available via serial or remote; requires reboot after setting.
+
+---
+
+### `log`
+
+Prints the captured log to the serial terminal. **Serial only.**
+
+**Usage:**
+```
+log
+```
+
+---
+
+### `set freq <frequency>`
+
+Sets the frequency in MHz. **Serial only.** Requires reboot to apply.
+
+**Parameters:** `frequency` — Frequency in MHz. **Default:** `869.525`
+
+**Usage:**
+```
+set freq 927.875
+```
+
+---
+
+### `stats-core`
+
+System stats: battery, uptime, queue length, debug flags. **Serial only.**
+
+**Usage:**
+```
+stats-core
+```
+
+---
+
+### `stats-packets`
+
+Packet counters: received, sent. **Serial only.**
+
+**Usage:**
+```
+stats-packets
+```
+
+---
+
+### `stats-radio`
+
+Radio stats: noise floor, last RSSI/SNR, airtime, receive errors. **Serial only.**
+
+**Usage:**
+```
+stats-radio
+```
+
+---
+
 ## Commands via Serial or Remote
 
-NOTE: For the various "set ..." commands, there is also a "get ..." command.
+*(Alphabetical. For the various "set ..." commands there is also a "get ..." command unless noted.)*
 
 ### `advert`
 
-Sends an advertisement packet.
+Sends a flood advert.
 
 **Usage:**
 ```
@@ -78,20 +118,175 @@ advert
 
 ---
 
-### `reboot`
+### `get / set adc.multiplier`
 
-Reboots the device (note, you'll prob get 'Timeout' which is normal).
+Fine-tune the battery reading (0.0–10.0). **Default:** `0.0` (or board-defined). Returns "Error: unsupported by this board" if not supported.
 
 **Usage:**
 ```
-reboot
+get adc.multiplier
+set adc.multiplier 1.0
+```
+
+---
+
+### `get / set advert.interval`
+
+Zero-hop advert interval in minutes (rounded to multiple of 2; range 60–240). **Default:** `0`
+
+**Usage:**
+```
+get advert.interval
+set advert.interval 30
+```
+
+---
+
+### `get / set af`
+
+Airtime factor (duty cycle limit), 0–9. **Default:** `1.0`
+
+**Usage:**
+```
+get af
+set af 1.0
+```
+
+---
+
+### `advert`
+
+Sends a flood advert.
+
+**Usage:**
+```
+advert
+```
+
+---
+
+### `get / set agc.reset.interval`
+
+AGC reset interval in seconds (rounded down to multiple of 4). Set to 0 to disable. **Default:** `0.0`
+
+**Usage:**
+```
+get agc.reset.interval
+set agc.reset.interval 60
+```
+
+---
+
+### `get / set allow.read.only`
+
+(Room server) When `on`, blank-password login is allowed but cannot Post (read-only). **Default:** `off`
+
+**Usage:**
+```
+get allow.read.only
+set allow.read.only on
+```
+
+---
+
+### `get / set bridge.baud`
+
+Bridge baud rate (RS-232 only). **Default:** `115200`
+Rates: `9600`, `19200`, `38400`, `57600`, `115200`
+
+**Usage:**
+```
+get bridge.baud
+set bridge.baud 9600
+```
+
+---
+
+### `get / set bridge.channel`
+
+Bridge channel (ESP-Now only). Channel number 1–14.
+
+**Usage:**
+```
+get bridge.channel
+set bridge.channel 1
+```
+
+---
+
+### `get / set bridge.delay`
+
+Delay in ms for packets routed through the bridge (0–10000). **Default:** `500`
+
+**Usage:**
+```
+get bridge.delay
+set bridge.delay 100
+```
+
+---
+
+### `get / set bridge.enabled`
+
+Enable or disable the bridge. **Default:** `off`
+
+**Usage:**
+```
+get bridge.enabled
+set bridge.enabled on
+```
+
+---
+
+### `get / set bridge.secret`
+
+ESP-Now encryption secret (16 characters). **Default:** Varies by board.
+
+**Usage:**
+```
+get bridge.secret
+set bridge.secret mysecret
+```
+
+---
+
+### `get / set bridge.source`
+
+Source of packets bridged: `rx` (received) or `tx` (transmitted). **Default:** `tx`
+
+**Usage:**
+```
+get bridge.source
+set bridge.source rx
+```
+
+---
+
+### `board`
+
+Shows the hardware/board name.
+
+**Usage:**
+```
+board
+```
+
+---
+
+### `clear stats`
+
+Clears stats counters.
+
+**Usage:**
+```
+clear stats
 ```
 
 ---
 
 ### `clkreboot`
 
-Resets the internal clock, then reboots the device (note, you'll prob get 'Timeout' which is normal).
+Resets the clock and reboots the node (you may see "Timeout"—this is normal).
 
 **Usage:**
 ```
@@ -102,7 +297,7 @@ clkreboot
 
 ### `clock`
 
-Displays current time per device's clock.
+Displays current time in UTC.
 
 **Usage:**
 ```
@@ -111,306 +306,103 @@ clock
 
 ---
 
-### `password {new-password}`
+### `get / set direct.txdelay`
 
-Sets a new admin password for the device.
-
-**Usage:**
-```
-password mypassword
-```
-
----
-
-### `set af {air-time-factor}`
-
-Sets the air-time-factor.
+Retransmit delay factor for direct traffic (0–2). **Default:** `0.2`
 
 **Usage:**
 ```
-set af 1.0
-```
-
----
-
-### `set tx {tx-power-dbm}`
-
-Sets LoRa transmit power in dBm (reboot to apply).
-
-**Usage:**
-```
-set tx 20
-```
-
----
-
-### `set repeat {on|off}`
-
-Enables or disables the repeater role for this node.
-
-**Usage:**
-```
-set repeat on
-```
-
----
-
-### `set allow.read.only {on|off}`
-
-(Room server) If 'on', then login with blank password will be allowed, but cannot Post to room (just read only).
-
-**Usage:**
-```
-set allow.read.only on
-```
-
----
-
-### `set flood.max {max-hops}`
-
-Sets the maximum number of hops of inbound flood packet (if >= max, packet is not forwarded).
-
-**Usage:**
-```
-set flood.max 5
-```
-
----
-
-### `set int.thresh {db}`
-
-Sets the Interference Threshold (in DB). Default is 14. Set to 0 to disable channel interference detection.
-
-**Usage:**
-```
-set int.thresh 14
-```
-
----
-
-### `set agc.reset.interval {seconds}`
-
-Sets the interval to reset the Auto Gain Controller. Set to 0 to disable.
-
-**Usage:**
-```
-set agc.reset.interval 60
-```
-
----
-
-### `set multi.acks {0|1}`
-
-Enables or disables the 'double ACKs' feature.
-
-**Usage:**
-```
-set multi.acks 1
-```
-
----
-
-### `set advert.interval {minutes}`
-
-Sets the timer interval in minutes to send a local (zero-hop) advertisement packet. Set to 0 to disable.
-
-**Usage:**
-```
-set advert.interval 30
-```
-
----
-
-### `set flood.advert.interval {hours}`
-
-Sets the timer interval in hours to send a flood advertisement packet. Set to 0 to disable.
-
-**Usage:**
-```
-set flood.advert.interval 24
-```
-
----
-
-### `set guest.password {guest-password}`
-
-Sets/updates the guest password (for repeaters, guest logins can send the 'Get Stats' request).
-
-**Usage:**
-```
-set guest.password guest123
-```
-
----
-
-### `set name {name}`
-
-Sets the advertisement name.
-
-**Usage:**
-```
-set name MyRepeater
-```
-
----
-
-### `set owner.info {info}`
-
-(Since ver 1.12.+) Sets owner information (Note: '|' characters get translated to newline chars when displayed).
-
-**Usage:**
-```
-set owner.info Contact info
-```
-
----
-
-### `set lat {latitude}`
-
-Sets the advertisement map latitude (decimal degrees).
-
-**Usage:**
-```
-set lat 37.7749
-```
-
----
-
-### `set lon {longitude}`
-
-Sets the advertisement map longitude (decimal degrees).
-
-**Usage:**
-```
-set lon -122.4194
-```
-
----
-
-### `set radio {freq},{bw},{sf},{cr}`
-
-Sets completely new radio params, and saves to preferences. Requires a "reboot" command to apply.
-
-**Usage:**
-```
-set radio 915.8,62.5,7,5
-```
-
----
-
-### `set rxdelay {base}`
-
-Sets (experimental) base (must be > 1 for effect) for applying slight delay to received packets, based on signal strength/score. Set to 0 to disable.
-
-**Usage:**
-```
-set rxdelay 2
-```
-
----
-
-### `set txdelay {factor}`
-
-Sets a factor multiplied with time-on-air for a flood-mode packet and with a randomized slot system, to delay its forwarding (to decrease likelihood of collisions).
-
-**Usage:**
-```
-set txdelay 1.5
-```
-
----
-
-### `set direct.txdelay {factor}`
-
-Same as txdelay, but for applying a random delay to the forwarding of direct-mode packets.
-
-**Usage:**
-```
+get direct.txdelay
 set direct.txdelay 1.2
 ```
 
 ---
 
-### `set bridge.enabled {on|off}`
+### `get / set flood.advert.interval`
 
-Enable/Disable bridge.
+Flood advert interval in hours (3–168). **Default:** `12` (Repeater), `0` (Sensor)
 
 **Usage:**
 ```
-set bridge.enabled on
+get flood.advert.interval
+set flood.advert.interval 24
 ```
 
 ---
 
-### `set bridge.delay {0-10000}`
+### `get / set flood.max`
 
-Set delay before retransmitting packets.
+Maximum flood hop count (0–64). **Default:** `64`
 
 **Usage:**
 ```
-set bridge.delay 100
+get flood.max
+set flood.max 5
 ```
 
 ---
 
-### `set bridge.source {rx|tx}`
+### `get freq`
 
-Choose whether the bridge will retransmit received packets or transmitted packets.
+Views the current frequency in MHz. (`set freq` is Serial only—see Serial Only Commands.)
 
 **Usage:**
 ```
-set bridge.source rx
+get freq
 ```
 
 ---
 
-### `set bridge.baud {speed}`
+### `get / set guest.password`
 
-Set serial link baudrate for rs232 bridges.
+Guest password. **Set by build flag:** `ROOM_PASSWORD` (Room Server only). **Default:** &lt;blank&gt;
 
 **Usage:**
 ```
-set bridge.baud 9600
+get guest.password
+set guest.password guest123
 ```
 
 ---
 
-### `set bridge.secret {shared-secret}`
+### `get / set int.thresh`
 
-Set bridge secret for espnow bridges.
+Local interference threshold. **Default:** `0.0`
 
 **Usage:**
 ```
-set bridge.secret mysecret
+get int.thresh
+set int.thresh 14
 ```
 
 ---
 
-### `set adc.multiplier {factor}`
+### `get / set lat`
 
-Sets custom factor to adjust reported battery voltage (only supported on select boards).
+Latitude in degrees. **Set by build flag:** `ADVERT_LAT`. **Default:** `0`
 
 **Usage:**
 ```
-set adc.multiplier 1.0
+get lat
+set lat 37.7749
 ```
 
 ---
 
-### `get bridge.type`
+### `log erase`
 
-Gets bridge type: `none`, `rs232`, `espnow`.
+Erases the captured log from node storage.
 
 **Usage:**
 ```
-get bridge.type
+log erase
 ```
 
 ---
 
 ### `log start`
 
-Starts packet logging to file system.
+Begins capture of RX log to node storage.
 
 **Usage:**
 ```
@@ -421,7 +413,7 @@ log start
 
 ### `log stop`
 
-Stops packet logging to file system.
+Ends capture of RX log to node storage.
 
 **Usage:**
 ```
@@ -430,42 +422,45 @@ log stop
 
 ---
 
-### `log erase`
+### `get / set lon`
 
-Erases the packet logs from file system.
+Longitude in degrees. **Set by build flag:** `ADVERT_LON`. **Default:** `0`
 
 **Usage:**
 ```
-log erase
+get lon
+set lon -122.4194
 ```
 
 ---
 
-### `ver`
+### `get / set multi.acks`
 
-Shows the device version and firmware build date.
+Multi-Acks support: `0` disable, `1` enable. **Default:** `0`
 
 **Usage:**
 ```
-ver
+get multi.acks
+set multi.acks 1
 ```
 
 ---
 
-### `neighbors`
+### `get / set name`
 
-(Repeater only) Shows a list of other repeater nodes heard via zero-hop adverts. Each line is `{id-prefix-hex}:{timestamp}:{snr-times-4}`.
+Node name. **Set by build flag:** `ADVERT_NAME`. Max length: 24 bytes if location set, 32 otherwise. Emoji/unicode may use more than one byte.
 
 **Usage:**
 ```
-neighbors
+get name
+set name MyRepeater
 ```
 
 ---
 
-### `neighbor.remove {pubkey-prefix}`
+### `neighbor.remove <pubkey_prefix>`
 
-(Repeater only) Removes first matching entry (by pubkey prefix (hex)), from neighbors list.
+(Repeater only) Removes a neighbor. **Parameters:** `pubkey_prefix` — Public key (or prefix) of the node to remove.
 
 **Usage:**
 ```
@@ -474,31 +469,123 @@ neighbor.remove a1
 
 ---
 
-### `clear stats`
+### `neighbors`
 
-Resets various stats counters to zero.
+(Repeater only) Lists nearby neighbors. Output limited to 8 most recent adverts. Each line: `{pubkey-prefix}:{timestamp}:{snr*4}`.
 
 **Usage:**
 ```
-clear stats
+neighbors
 ```
 
 ---
 
-### `tempradio {freq},{bw},{sf},{cr},{minutes}`
+### `get / set owner.info`
 
-Sets temporary radio params for the given number of &#123;minutes&#125;, reverting to original radio params afterward (does NOT save to preferences).
+Owner information text. **Default:** &lt;blank&gt;. `|` is translated to newlines. Requires firmware 1.12+.
 
 **Usage:**
 ```
-tempradio 915.8,62.5,7,5,10
+get owner.info
+set owner.info Contact info
 ```
 
 ---
 
-### `setperm {pubkey-hex} {permissions}`
+### `password <new_password>`
 
-Modifies the ACL. Removes matching entry (by pubkey prefix) if 'permissions' is zero. Adds new entry if pubkey-hex is full length and is not currently in ACL. Updates entry by matching pubkey prefix. Permission bits vary per firmware role, but low 2 bits are: 0 (Guest), 1 (Read only), 2 (Read write), 3 (Admin).
+Changes the admin password. **Set by build flag:** `ADMIN_PASSWORD`. **Default:** `password`. Reply echoes the updated password. Any node using this password is added to the admin ACL.
+
+**Usage:**
+```
+password mypassword
+```
+
+---
+
+### `get / set radio`
+
+Radio parameters: `get radio` or `set radio <freq>,<bw>,<sf>,<cr>`. **Parameters:** freq (MHz), bw (kHz), sf (5–12), cr (5–8). **Set by build flag:** `LORA_FREQ`, `LORA_BW`, `LORA_SF`, `LORA_CR`. **Default:** `869.525,250,11,5`. Requires reboot to apply.
+
+**Usage:**
+```
+get radio
+set radio 915.8,62.5,7,5
+```
+
+---
+
+### `reboot`
+
+Reboots the node (you may see "Timeout"—this is normal).
+
+**Usage:**
+```
+reboot
+```
+
+---
+
+### `get / set repeat`
+
+Repeat flag: enable/disable repeater role. **Default:** `on`
+
+**Usage:**
+```
+get repeat
+set repeat on
+```
+
+---
+
+### `get / set rxdelay`
+
+[Experimental] Processing delay base for received traffic (0–20). **Default:** `0.0`
+
+**Usage:**
+```
+get rxdelay
+set rxdelay 2
+```
+
+---
+
+### `sensor get <key>`
+
+(When sensor support is compiled in) Views the value of a sensor. **Parameters:** `key` — Sensor setting name.
+
+**Usage:**
+```
+sensor get temperature
+```
+
+---
+
+### `sensor list [start]`
+
+(When sensor support is compiled in) Lists sensors. **Parameters:** `start` — Optional starting index (default 0). Output format: `<var_name>=<value>\n`
+
+**Usage:**
+```
+sensor list
+```
+
+---
+
+### `sensor set <key> <value>`
+
+(When sensor support is compiled in) Sets a sensor value. **Parameters:** `key`, `value`
+
+**Usage:**
+```
+sensor set key value
+```
+
+---
+
+### `setperm <pubkey> <permissions>`
+
+Add, update or remove companion permissions. **Parameters:** `pubkey` — Companion public key; `permissions` — `0` Guest, `1` Read-only, `2` Read-write, `3` Admin. Omitting `permissions` removes the entry.
 
 **Usage:**
 ```
@@ -507,13 +594,92 @@ setperm a1b2c3d4 3
 
 ---
 
-## Region Management (Repeater Only)
+### `set prv.key <private_key>`
 
-`region` commands have been introduced to manage region definitions and permissions.
+Sets this node's identity (private key). **Parameters:** `private_key` — 64 hex characters. Requires reboot after setting.
+
+**Usage:**
+```
+set prv.key <hex>
+```
+
+---
+
+### `start ota`
+
+Starts an Over-The-Air (OTA) firmware update.
+
+**Usage:**
+```
+start ota
+```
+
+---
+
+### `tempradio <freq>,<bw>,<sf>,<cr>,<timeout_mins>`
+
+Temporary radio parameters for the given minutes; not saved (clears on reboot). **Parameters:** freq (MHz 300–2500), bw (kHz 7.8–500), sf (5–12), cr (5–8), timeout_mins &gt; 0.
+
+**Usage:**
+```
+tempradio 915.8,62.5,7,5,10
+```
+
+---
+
+### `time <epoch_seconds>`
+
+Sets the time to a specific timestamp. **Parameters:** `epoch_seconds` — Unix epoch time.
+
+**Usage:**
+```
+time 1738242833
+```
+
+---
+
+### `get / set tx`
+
+Transmit power in dBm (1–22). **Set by build flag:** `LORA_TX_POWER`. Controls LoRa chip only; some nodes have an extra PA. Refer to node manual; too high may violate regulations.
+
+**Usage:**
+```
+get tx
+set tx 20
+```
+
+---
+
+### `get / set txdelay`
+
+Retransmit delay factor for flood traffic (0–2). **Default:** `0.5`
+
+**Usage:**
+```
+get txdelay
+set txdelay 1.5
+```
+
+---
+
+### `ver`
+
+Returns the firmware version (and build date).
+
+**Usage:**
+```
+ver
+```
+
+---
+
+## Region Management
+
+*(v1.10+. Alphabetical.)*
 
 ### `region`
 
-(Serial only) Lists all defined regions and current flood permissions.
+Dumps all defined regions and flood permissions. **Serial only** for firmware older than 1.12.0.
 
 **Usage:**
 ```
@@ -522,61 +688,9 @@ region
 
 ---
 
-### `region load`
+### `region allowf <name>`
 
-NOTE: this is a special multi-command invocation. Each subsequent command is a region name (indented with spaces to indicate parent hierarchy, with one space at minimum). Terminated by sending a blank line/command.
-
-**Usage:**
-```
-region load
-* F
- US F
-  California F
-   SoCal F
-    LAX F
-    SNA F
-    SAN F
-
-```
-
----
-
-### `region get {* | name-prefix}`
-
-Searches for region with given name prefix (or '*' for the global scope). Replies with "-> &#123;region-name&#125; (&#123;parent-name&#125;) &#123;'F'&#125;".
-
-**Usage:**
-```
-region get *
-```
-
----
-
-### `region put {name} {* | parent-name-prefix}`
-
-Adds or updates a region definition with given name. Optional define parent name
-
-**Usage:**
-```
-region put MyRegion *
-```
-
----
-
-### `region remove {name}`
-
-Removes a region definition with given name (must match exactly, and have no child regions).
-
-**Usage:**
-```
-region remove MyRegion
-```
-
----
-
-### `region allowf {* | name-prefix}`
-
-Sets the 'F'lood permission for the given region ('*' for the global/legacy scope).
+Allows a region. **Parameters:** `name` — Region name or `*` for wildcard. On wildcard `*`, allows packets without region transport codes.
 
 **Usage:**
 ```
@@ -585,9 +699,9 @@ region allowf *
 
 ---
 
-### `region denyf {* | name-prefix}`
+### `region denyf <name>`
 
-Removes the 'F'lood permission for the given region (NOTE: at this stage NOT advised to use this on the global/legacy scope!!).
+Blocks a region. **Parameters:** `name` — Region name or `*` for wildcard. On wildcard `*`, drops packets without region transport codes. Use with caution.
 
 **Usage:**
 ```
@@ -596,31 +710,32 @@ region denyf MyRegion
 
 ---
 
-### `region home`
+### `region get <name>`
 
-Replies with the current 'home' region (Note applied anywhere yet, reserved for future).
+Shows information for a region. **Parameters:** `name` — Region name or `*` for wildcard.
 
 **Usage:**
 ```
-region home
+region get *
 ```
 
 ---
 
-### `region home {* | name-prefix}`
+### `region home` / `region home <name>`
 
-Sets the 'home' region.
+Views or sets the home region for this node. **Parameters:** `name` — Region name.
 
 **Usage:**
 ```
+region home
 region home MyRegion
 ```
 
 ---
 
-### `region list {allowed|denied}`
+### `region list <filter>`
 
-(Since ver 1.12.+) Lists names of configured regions, filtering either just ones with flood permission, or those that do NOT have flood permission.
+Lists regions. **Parameters:** `filter` — `allowed` | `denied`. **Serial only.** Requires firmware 1.12+.
 
 **Usage:**
 ```
@@ -629,9 +744,46 @@ region list allowed
 
 ---
 
+### `region load` / `region load <name> [flood_flag]`
+
+Bulk-load region lists. **Parameters:** `name` — Region name (`*` = wildcard); `flood_flag` — Optional `F` to allow flooding. Indentation defines parent-child relationships (max 8 levels). `region load` with no name is interactive and does not work remotely.
+
+**Usage:**
+```
+region load
+* F
+  #NorthAmerica
+    #USA
+<blank line to end>
+```
+
+---
+
+### `region put <name> [parent_name]`
+
+Creates or updates a region. **Parameters:** `name` — Region name; `parent_name` — Parent region (optional; defaults to wildcard).
+
+**Usage:**
+```
+region put MyRegion *
+```
+
+---
+
+### `region remove <name>`
+
+Removes a region. **Parameters:** `name` — Region name. All child regions must be removed first.
+
+**Usage:**
+```
+region remove MyRegion
+```
+
+---
+
 ### `region save`
 
-Persists the region list/map to storage.
+Saves any region changes made since reboot.
 
 **Usage:**
 ```
@@ -640,46 +792,99 @@ region save
 
 ---
 
+### Region Examples
+
+**Example 1: Named public region with F flag**
+```
+region load
+#Europe F
+<blank line to end region load>
+region save
+```
+Creates `#Europe` with flooding enabled.
+
+**Example 2: Wildcard with F flag**
+```
+region load
+* F
+<blank line to end region load>
+region save
+```
+Wildcard `*` with flooding; applies to packets without transport codes.
+
+**Example 3: Wildcard without F flag**
+```
+region load
+*
+<blank line to end region load>
+region save
+```
+Wildcard exists but does not affect packet distribution.
+
+**Example 4: Nested regions with F flag**
+```
+region load
+#Europe F
+  #UK
+    #London
+    #Manchester
+  #France
+    #Paris
+    #Lyon
+<blank line to end region load>
+region save
+```
+Nested children inherit parent's flooding.
+
+**Example 5: Wildcard with nested public regions**
+```
+region load
+* F
+  #NorthAmerica
+    #USA
+      #NewYork
+      #California
+    #Canada
+      #Ontario
+      #Quebec
+<blank line to end region load>
+region save
+```
+Global flooding with regional hierarchy.
+
+---
+
 ## GPS Management
 
-`gps` command has been introduced to manage location related topics.
+*(When GPS support is compiled in. Alphabetical.)*
 
-### `gps`
+### `gps` / `gps <state>`
 
-Gives status of gps. When gps is off, it replies only `off`, if on it replies with `on, {status}, {fix}, {sat count}`.
+Views or changes GPS state. **Parameters:** `state` — `on` | `off`. **Default:** `off`. When enabled, output format: `{status}, {fix}, {sat count}`
 
 **Usage:**
 ```
 gps
-```
-
----
-
-### `gps {on|off}`
-
-Toggles gps power state.
-
-**Usage:**
-```
 gps on
 ```
 
 ---
 
-### `gps sync`
+### `gps advert` / `gps advert <policy>`
 
-Syncs node time with gps clock.
+Views or changes GPS advert policy. **Parameters:** `policy` — `none` | `share` | `prefs` (none: don't include location; share: from SensorManager; prefs: node lat/lon). **Default:** `prefs`
 
 **Usage:**
 ```
-gps sync
+gps advert
+gps advert share
 ```
 
 ---
 
 ### `gps setloc`
 
-Sets node's position to gps coordinates and save preferences.
+Sets this node's location from GPS coordinates and saves to preferences.
 
 **Usage:**
 ```
@@ -688,59 +893,40 @@ gps setloc
 
 ---
 
-### `gps advert`
+### `gps sync`
 
-Gives location advert configuration of the node: `none`: don't include location in adverts, `share`: share gps location (from SensorManager), `prefs`: advert the location stored in preferences.
+Syncs this node's clock with GPS time.
 
 **Usage:**
 ```
-gps advert
+gps sync
 ```
 
 ---
 
-### `gps advert {none|share|prefs}`
+## Power Management
 
-Sets location advert configuration.
+*(Repeater only. Alphabetical.)*
 
-**Usage:**
-```
-gps advert share
-```
+### `powersaving` / `powersaving <state>`
 
----
-
-## Power Management (Repeater Only)
-
-`powersaving` commands have been introduced (from v1.12.0 onwards).
-
-### `powersaving {on|off}`
-
-Changes the current power saving mode (persisted to prefs).
+Views or changes the power saving flag. **Parameters:** `state` — `on` | `off`. **Default:** `on`. When enabled, device enters sleep between radio transmissions.
 
 **Usage:**
 ```
+powersaving
 powersaving on
 ```
 
 ---
 
-### `powersaving`
+## Commands via T-Deck Only
 
-Returns the current power saving mode (on or off).
-
-**Usage:**
-```
-powersaving
-```
-
----
-
-## Commands Only via T-Deck
+*(Alphabetical.)*
 
 ### `clock sync`
 
-Syncs device's clock with T-Deck's clock.
+Syncs the device's clock with the T-Deck's clock. Available when using a T-Deck.
 
 **Usage:**
 ```
@@ -751,4 +937,4 @@ clock sync
 
 ## Reference
 
-This reference is based on the [MeshCore Wiki - Repeater & Room Server CLI Reference](https://github.com/meshcore-dev/MeshCore/wiki/Repeater-&-Room-Server-CLI-Reference).
+This reference is based on [MeshCore CLI Commands](https://github.com/meshcore-dev/MeshCore/blob/main/docs/cli_commands.md).
