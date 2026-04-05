@@ -8,7 +8,7 @@ To flash your device with MeshCore firmware, you'll use the **MeshCore Web Flash
 
 ## Access the Web Flasher
 
-Start by navigating to the [MeshCore Web Flasher](https://flasher.meshcore.co.uk/).
+Start by navigating to the [MeshCore Web Flasher](https://flasher.meshcore.io/).
 
 ## Step 1: Select Your Device
 
