@@ -48,6 +48,27 @@ Emergency communication planning
 
 ![emcommplanning channel](./assets/public_channels/emcommplanning.png)
 
+## 3dprinting
+Chat all things 3D printing
+
+`dfd5fdaf4475edc8725d70b5748a17c6`
+
+![3dprinting channel](./assets/public_channels/3dprinting.png)
+
+## aviation
+Chat all things planes and aviation
+
+`e17538c835ee0990b349ca1879b4f57a`
+
+![aviation channel](./assets/public_channels/aviation.png)
+
+## chat
+General chit chat
+
+`d0bdd6d71538138ed979eec00d98ad97`
+
+![chat channel](./assets/public_channels/chat.png)
+
 ## hamradio
 Chat all things ham radio
 
@@ -61,6 +82,13 @@ Local chat for the Inland Empire
 `4d74e629bd2743acfccc03065cfd2a72`
 
 ![inlandempire channel](./assets/public_channels/ie.png)
+
+## jokes
+Tell us a joke!
+
+`abe610d61dee508c0ac18793c36c41c3`
+
+![jokes channel](./assets/public_channels/jokes.png)
 
 ## lakeforest
 Local chat for Lake Forest
@@ -117,3 +145,10 @@ Local chat for Ventura County
 `94d819fc0570528402c29e16b2e393ce`
 
 ![venturacounty channel](./assets/public_channels/ventura.png)
+
+## watchduty
+WatchDuty app reports
+
+`ed94d36c3ba4afca4318eeeff2b2d7f2`
+
+![watchduty channel](./assets/public_channels/watchduty.png)

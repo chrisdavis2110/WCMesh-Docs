@@ -44,3 +44,4 @@ MeshBuddy commands are typically used in region-specific channels:
 - **Bay Area**: [Bay Area Repeater Control](https://discord.com/channels/1350515855942881442/1442733640705376437)
 - **Sacramento-Foothills**: [Sacramento-Foothills Repeater Control](https://discord.com/channels/1350515855942881442/1442733667062648934)
 - **Central Valley**: [Central Valley Repeater Control](https://discord.com/channels/1350515855942881442/1454500129628487784)
+- **Central Coast**: [Central Coast Repeater Control](https://discord.com/channels/1350515855942881442/1473742188402970698)

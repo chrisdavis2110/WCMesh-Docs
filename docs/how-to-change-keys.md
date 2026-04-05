@@ -23,7 +23,7 @@ Go to the appropriate #repeater-control channel for your region:
 - **Central Coast**: [Central Coast Repeater Control](https://discord.com/channels/1350515855942881442/1473742188402970698)
 
 :::info
-ALL PREFIXES IN SOCAL HAVE BEEN TAKEN. WE ARE WORKING ON A NEW SOLUTION
+ALL PREFIXES IN SOCAL HAVE BEEN TAKEN. ONCE WE MOVE TO 2 BYTE, MORE WILL OPEN UP
 :::
 
 Run the `/open` command to find an open 2 character prefix (1 byte) for your new key.
@@ -44,7 +44,7 @@ Copy or write down the ***PRIVATE*** key.
 
 ### For MeshCore firmware 1.11 and below
 
-Connect your repeater to a PC via USB, use Chrome and go to the [web flasher](https://flasher.meshcore.dev/) and click on Console button to enter repeater console.
+Connect your repeater to a PC via USB, use Chrome and go to the [web flasher](https://flasher.meshcore.io/) and click on Console button to enter repeater console.
 
 ![MeshCore Console](./assets/repeater/meshcore_flasher_console.png)
 
