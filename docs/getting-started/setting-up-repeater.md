@@ -23,7 +23,7 @@ The top section is the **Repeater Information**. This displays important details
 
 ![Repeater Info](../assets/repeater/rpt_info.png)
 
-Look at the public key. The first 2-6 characters (1-3 byte or hex prefix) is what will be used as for the path in packets. If your prefix collides with a another repeater, we kindly ask to [change you key](../how-to-change-keys.md). Please visit our [Discord](https://discord.gg/wcmesh) to get set up with a new key.
+Look at the public key. The first 2-6 characters (1-3 byte or hex prefix) is what will be used as for the path in packets. If your prefix collides with a another repeater, we kindly ask to [change your key](../how-to-change-keys.md). Please visit our [Discord](https://discord.gg/wcmesh) to get set up with a new key.
 
 | Button | Description |
 |---|---|
@@ -90,6 +90,8 @@ Owner info can be seen by anyone who logs in to your repeater via guest login. S
 ## Advanced settings
 
 Click the checkbox next to **Show advanced settings** to bring up more settings.
+
+![Repeater advanced settings](../assets/repeater/rpt_advanced.png)
 
 | Setting | Description |
 |---|---|
