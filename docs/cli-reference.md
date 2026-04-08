@@ -107,13 +107,15 @@ stats-radio
 
 *(Alphabetical. For the various "set ..." commands there is also a "get ..." command unless noted.)*
 
-### `advert`
+### `advert` / `advert.zerohop`
 
-Sends a flood advert.
+- **`advert`** — Sends a flood advert.
+- **`advert.zerohop`** — Sends a zero-hop advert.
 
 **Usage:**
 ```
 advert
+advert.zerohop
 ```
 
 ---
@@ -150,17 +152,6 @@ Airtime factor (duty cycle limit), 0–9. **Default:** `1.0`
 ```
 get af
 set af 1.0
-```
-
----
-
-### `advert`
-
-Sends a flood advert.
-
-**Usage:**
-```
-advert
 ```
 
 ---
@@ -240,7 +231,7 @@ set bridge.enabled on
 
 ### `get / set bridge.secret`
 
-ESP-Now encryption secret (16 characters). **Default:** Varies by board.
+ESP-Now bridge secret (stored string; max length fits the preference buffer, typically up to 15 characters plus terminator). **Default:** Varies by board.
 
 **Usage:**
 ```
@@ -252,12 +243,24 @@ set bridge.secret mysecret
 
 ### `get / set bridge.source`
 
-Source of packets bridged: `rx` (received) or `tx` (transmitted). **Default:** `tx`
+Which packets are sent to the bridge interface. **`get`** returns `logRx` (received) or `logTx` (transmitted). **`set`** uses `rx` for received traffic or `tx` for transmitted (default). **Default:** `logTx`
 
 **Usage:**
 ```
 get bridge.source
 set bridge.source rx
+set bridge.source tx
+```
+
+---
+
+### `get bridge.type`
+
+(When bridge support is compiled in) Reports the bridge build: `rs232`, `espnow`, or `none`.
+
+**Usage:**
+```
+get bridge.type
 ```
 
 ---
@@ -269,6 +272,17 @@ Shows the hardware/board name.
 **Usage:**
 ```
 board
+```
+
+---
+
+### `get bootloader.ver`
+
+Bootloader version string. **nRF52 only**; other platforms return an unsupported error.
+
+**Usage:**
+```
+get bootloader.ver
 ```
 
 ---
@@ -291,6 +305,18 @@ Resets the clock and reboots the node (you may see "Timeout"—this is normal).
 **Usage:**
 ```
 clkreboot
+```
+
+---
+
+### `poweroff` / `shutdown`
+
+Powers off the device via the board implementation (if supported). Does not return on success.
+
+**Usage:**
+```
+poweroff
+shutdown
 ```
 
 ---
@@ -434,6 +460,20 @@ set lon -122.4194
 
 ---
 
+### `get / set loop.detect`
+
+Loop detection for flood traffic (repeaters). **Default:** `off`. **Firmware 1.14+.**
+
+**Parameters:** `state` — `off` (no detection), `minimal`, `moderate`, or `strict`. The repeater drops packets when its own path ID/hash appears too often in the path (thresholds depend on path hash size and mode). Use if a bad or custom firmware node is causing packet storms.
+
+**Usage:**
+```
+get loop.detect
+set loop.detect minimal
+```
+
+---
+
 ### `get / set multi.acks`
 
 Multi-Acks support: `0` disable, `1` enable. **Default:** `0`
@@ -460,12 +500,14 @@ set name MyRepeater
 
 ### `neighbor.remove <pubkey_prefix>`
 
-(Repeater only) Removes a neighbor. **Parameters:** `pubkey_prefix` — Public key (or prefix) of the node to remove.
+(Repeater only) Removes neighbor entries whose public key starts with the given hex prefix. **Parameters:** `pubkey_prefix` — Hex public key or prefix. **With an empty prefix** (nothing after `neighbor.remove `), all neighbors are cleared.
 
 **Usage:**
 ```
 neighbor.remove a1
 ```
+
+To clear **all** neighbors, send `neighbor.remove ` with no hex digits after the trailing space (empty prefix).
 
 ---
 
@@ -492,6 +534,20 @@ set owner.info Contact info
 
 ---
 
+### `get / set path.hash.mode`
+
+Path hash size used in **this repeater’s own adverts** (0–2). **Default:** `0`. **Firmware 1.14+.** Does **not** change which path sizes the repeater forwards (1.14+ forwards 1-, 2-, and 3-byte path hashes). Value `3` is reserved—do not use.
+
+**Parameters:** `value` — `0` (1-byte hash, up to 64 flood hops), `1` (2-byte, up to 32 flood hops), `2` (3-byte, up to 21 flood hops). Older firmware may not propagate multibyte path adverts; coordinate mesh upgrades before raising this.
+
+**Usage:**
+```
+get path.hash.mode
+set path.hash.mode 0
+```
+
+---
+
 ### `password <new_password>`
 
 Changes the admin password. **Set by build flag:** `ADMIN_PASSWORD`. **Default:** `password`. Reply echoes the updated password. Any node using this password is added to the admin ACL.
@@ -499,6 +555,61 @@ Changes the admin password. **Set by build flag:** `ADMIN_PASSWORD`. **Default:*
 **Usage:**
 ```
 password mypassword
+```
+
+---
+
+### `get public.key`
+
+Shows this node’s public key (hex).
+
+**Usage:**
+```
+get public.key
+```
+
+---
+
+### `get pwrmgt.bootmv`
+
+Boot voltage in millivolts. **nRF52 with power management**; otherwise returns an error.
+
+**Usage:**
+```
+get pwrmgt.bootmv
+```
+
+---
+
+### `get pwrmgt.bootreason`
+
+Reset and shutdown reason strings. **nRF52 with power management**; otherwise returns an error.
+
+**Usage:**
+```
+get pwrmgt.bootreason
+```
+
+---
+
+### `get pwrmgt.source`
+
+Current power source: `external` or `battery`. **nRF52 with power management**; otherwise returns an error.
+
+**Usage:**
+```
+get pwrmgt.source
+```
+
+---
+
+### `get pwrmgt.support`
+
+Whether the board reports power management: `supported` or `unsupported`.
+
+**Usage:**
+```
+get pwrmgt.support
 ```
 
 ---
@@ -511,6 +622,18 @@ Radio parameters: `get radio` or `set radio <freq>,<bw>,<sf>,<cr>`. **Parameters
 ```
 get radio
 set radio 915.8,62.5,7,5
+```
+
+---
+
+### `get / set radio.rxgain`
+
+(SX1262/SX1268 builds only) RX boosted gain: `on` or `off`.
+
+**Usage:**
+```
+get radio.rxgain
+set radio.rxgain on
 ```
 
 ---
@@ -534,6 +657,17 @@ Repeat flag: enable/disable repeater role. **Default:** `on`
 ```
 get repeat
 set repeat on
+```
+
+---
+
+### `get role`
+
+Shows the firmware’s configured role string for this node.
+
+**Usage:**
+```
+get role
 ```
 
 ---
