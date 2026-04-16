@@ -83,7 +83,7 @@ There has been some talk about setting regions, however, I don’t think it work
 
 
 ### Wardriving
-I think I will have everyone move to [MeshMapper](socal.meshmapper.net). The current coverage.wcmesh wardrive is not being developed anymore and I don’t have time to update it. The team over at MeshMapper have done amazing work on adapting multibyte and since it’s pretty fresh, it won’t have a lot of stale, old tiles. It has a standalone [iOS](https://apps.apple.com/us/app/meshmapper/id6758073991) and [Android](https://play.google.com/store/apps/details?id=net.meshmapper.app) app, or you can use the [browser](https://wd.meshmapper.net) like we used to do. There is a lot of information about MeshMapper, so if you want to find out more about it, feel free to contact me.
+I think I will have everyone move to [MeshMapper](https://socal.meshmapper.net). The current coverage.wcmesh wardrive is not being developed anymore and I don’t have time to update it. The team over at MeshMapper have done amazing work on adapting multibyte and since it’s pretty fresh, it won’t have a lot of stale, old tiles. It has a standalone [iOS](https://apps.apple.com/us/app/meshmapper/id6758073991) and [Android](https://play.google.com/store/apps/details?id=net.meshmapper.app) app, or you can use the [browser](https://wd.meshmapper.net) like we used to do. There is a lot of information about MeshMapper, so if you want to find out more about it, feel free to contact me.
 
 ![Meshmapper map](../assets/sotm/meshmapper.png)
 
@@ -106,4 +106,4 @@ I want to leave with just one final note:
 2. `set path.hash.mode {1|2}` on repeaters only
 3. `set loop.detect {minimal|moderate|strict}`
 4. `set owner.info {text}`
-5. Wardrive using [MeshMapper](socal.meshmapper.net)
+5. Wardrive using [MeshMapper](https://socal.meshmapper.net)
