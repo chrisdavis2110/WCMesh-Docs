@@ -25,7 +25,7 @@ This HOWTO is based on a few assumptions:
 
 ## Step 1: Retrieve the Firmware Update
 
-On your phone, browse to the [MeshCore Web FLasher](https://flasher.meshcore.co.uk/)
+On your phone, browse to the [MeshCore Web FLasher](https://flasher.meshcore.io/)
 
 Search for your board. In this example we will use **"RAK WisBlock / WisMesh (RAK 4631)"**.
 

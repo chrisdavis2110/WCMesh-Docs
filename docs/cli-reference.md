@@ -1071,4 +1071,4 @@ clock sync
 
 ## Reference
 
-This reference is based on [MeshCore CLI Commands](https://github.com/meshcore-dev/MeshCore/blob/main/docs/cli_commands.md).
+This reference is based on [MeshCore CLI Commands](https://docs.meshcore.io/cli_commands/).

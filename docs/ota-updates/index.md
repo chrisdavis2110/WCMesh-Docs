@@ -26,7 +26,7 @@ Before starting an OTA update, make sure you have:
 - **MeshCore app** installed on your phone for connectivity
 - **MeshCore companion device** in a known good state for communication
 - **Physical proximity** to the device (the update process requires close range)
-- **Firmware file** downloaded from the [MeshCore Web Flasher](https://flasher.meshcore.co.uk/)
+- **Firmware file** downloaded from the [MeshCore Web Flasher](https://flasher.meshcore.io/)
 
 ## Device-Specific Guides
 
@@ -73,7 +73,7 @@ This guide covers:
 
 While the specific steps vary by platform, the general process is:
 
-1. **Download firmware** from the [MeshCore Web Flasher](https://flasher.meshcore.co.uk/)
+1. **Download firmware** from the [MeshCore Web Flasher](https://flasher.meshcore.io/)
    - Select your device and role (Repeater or Room Server)
    - Download the appropriate file format for your platform
 
@@ -111,4 +111,4 @@ For additional help, visit our [Discord community](https://discord.gg/wcmesh).
 
 ## Alternative: Web Flasher
 
-If OTA updates aren't suitable for your situation, you can always use the [MeshCore Web Flasher](https://flasher.meshcore.co.uk/) with a physical connection. See the [Getting Started guide](../getting-started/flashing-devices.md) for more information.
+If OTA updates aren't suitable for your situation, you can always use the [MeshCore Web Flasher](https://flasher.meshcore.io/) with a physical connection. See the [Getting Started guide](../getting-started/flashing-devices.md) for more information.

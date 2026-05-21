@@ -18,3 +18,4 @@ These White Papers cover the various settings for repeater and companion nodes. 
 - [Why Flood DM Paths Jump](<./assets/whitepapers/White Paper 5 - Why Flood DM Paths Jump.pdf>)
 - [Why are Repeater Error Rates so High](<./assets/whitepapers/White Paper 6 - Why are Error Rates so High 50.pdf>)
 - [MeshCore Coding Rate (CR) Architecture, Limits, and Operational Behavior](<./assets/whitepapers/White Paper 7 - Coding Rate (CR) Architecture.pdf>)
+- [MeshCore Protocol](<./assets/whitepapers/White Paper 8 - MeshCore Protocol.pdf>)

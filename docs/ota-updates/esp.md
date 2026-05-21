@@ -21,7 +21,7 @@ This HOWTO is based on a few assumptions:
 
 ## Step 1: Retrieve the Firmware Update
 
-On your phone, browse to the [MeshCore Web FLasher](https://flasher.meshcore.co.uk/)
+On your phone, browse to the [MeshCore Web FLasher](https://flasher.meshcore.io/)
 
 Search for your board and select it. Select **"Repeater"** on the next page. The "Download" button has two options. Select the **non-merged .bin file** (there should not be the word "merged" in the file name), and save to your device you'll be using in the field for this update procedure.
 
