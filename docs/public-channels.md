@@ -41,12 +41,27 @@ Local nonemergency notifications
 
 ![socalalert channel](./assets/public_channels/socalalert.png)
 
+
+## breakingnews
+Global events
+
+`8c886da2295a9cb0de02299cb6c8598e`
+
+![breakingnews channel](./assets/public_channels/breakingnews.png)
+
 ## emcommplanning
 Emergency communication planning
 
 `ed6ca1e071806f107eea4d94d3b4b92f`
 
 ![emcommplanning channel](./assets/public_channels/emcommplanning.png)
+
+## prepping
+Prepping planning
+
+`85f1b8b4d0275c2ab00e5fad3b9c1560`
+
+![prepping channel](./assets/public_channels/prepping.png)
 
 ## 3dprinting
 Chat all things 3D printing
@@ -69,12 +84,26 @@ General chit chat
 
 ![chat channel](./assets/public_channels/chat.png)
 
+## claremontupland
+Local chat for Claremont Upland area
+
+`45bb55bfb9655c3218cc5f4dbb7005cc`
+
+![claremontupland channel](./assets/public_channels/claremontupland.png)
+
 ## hamradio
 Chat all things ham radio
 
 `83c8b01997654265938da8765cbc7db9`
 
 ![hamradio channel](./assets/public_channels/hamradio.png)
+
+## hardware
+Chat all things hardware
+
+`84a152bdd69dd072b164f7e3945b86ba`
+
+![hardware channel](./assets/public_channels/hardware.png)
 
 ## inlandempire
 Local chat for the Inland Empire
@@ -131,6 +160,20 @@ Local chat for Santa Barbara County
 `76cf469b93e61bd4db1d4dbb4d32a7fb`
 
 ![sbcountymesh channel](./assets/public_channels/sbcounty.png)
+
+## scvmesh
+Local chat for Santa Clarita Valley
+
+`314171b092d5f17f3b496200ef7e88b7`
+
+![scvmesh channel](./assets/public_channels/scvmesh.png)
+
+## sfv
+Local chat for San Fernando Valley
+
+`7058e0b71e838af898900ea0c7dfc1c5`
+
+![sfv channel](./assets/public_channels/sfv.png)
 
 ## southbay
 Local chat for South Bay

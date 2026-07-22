@@ -7,6 +7,34 @@ sidebar_position: 5
 
 These list the tx setting in the radio you need to set to get a desired output power.
 
+## GAT562 30s
+
+|TX setting|Output|
+|---|---|
+|0|13.6 dbm|
+|1|16.2 dbm|
+|2|18.4 dbm|
+|3|20.0 dbm|
+|4|21.4 dbm|
+|5|22.6 dbm|
+|6|23.8 dbm|
+|7|24.8 dbm|
+|8|25.8 dbm|
+|9|26.8 dbm|
+|10|27.4 dbm|
+|11|28.2 dbm|
+|12|28.8 dbm|
+|13|29.4 dbm|
+|14|29.8 dbm|
+|15|30.0 dbm|
+|16|30.0 dbm|
+|17|30.0 dbm|
+|18|30.0 dbm|
+|19|30.0 dbm|
+|20|30.0 dbm|
+|21|30.0 dbm|
+|22|30.0 dbm|
+
 ## Heltec v4
 
 |TX setting|Output|
@@ -35,6 +63,19 @@ These list the tx setting in the radio you need to set to get a desired output p
 |21|28.26 dbm|
 |22|28.39 dbm|
 
+## RAK 1w
+
+|TX setting|Output|
+|---|---|
+|1|9.0 dbm|
+|4|12.0 dbm|
+|7|15.0 dbm|
+|10|18.0 dbm|
+|13|21.0 dbm|
+|16|24.0 dbm|
+|19|27.0 dbm|
+|22|30.0 dbm|
+
 ## Station G2
 
 |TX setting|Output|
@@ -53,16 +94,3 @@ These list the tx setting in the radio you need to set to get a desired output p
 |17|35.5 dbm|
 |18|36 dbm|
 |19|36.5 dbm|
-
-## RAK 1w
-
-|TX setting|Output|
-|---|---|
-|1|9.0 dbm|
-|4|12.0 dbm|
-|7|15.0 dbm|
-|10|18.0 dbm|
-|13|21.0 dbm|
-|16|24.0 dbm|
-|19|27.0 dbm|
-|22|30.0 dbm|
