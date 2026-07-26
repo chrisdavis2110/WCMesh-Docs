@@ -146,12 +146,28 @@ set advert.interval 30
 
 ### `get / set af`
 
-Airtime factor (duty cycle limit), 0–9. **Default:** `1.0`
+**Deprecated** as of firmware v1.15.0 — use `get`/`set dutycycle` instead.
+
+Airtime factor (duty cycle limit), 0–9. After each transmission, the repeater enforces a silent period of approximately on-air time × value, for a long-term duty cycle of roughly `1 / (1 + value)` (e.g. `af = 1` → ~50%, `af = 9` → ~10%). **Default:** `1.0`
 
 **Usage:**
 ```
 get af
 set af 1.0
+```
+
+---
+
+### `get / set dutycycle`
+
+Duty cycle percentage (1–100). **Default:** `50` (equivalent to airtime factor 1.0). **Firmware v1.15.0+.** Prefer this over deprecated `af`.
+
+**Examples:** `100` — no limit; `50` — default; `10` — 10%; `1` — strictest EU-style limit.
+
+**Usage:**
+```
+get dutycycle
+set dutycycle 50
 ```
 
 ---
@@ -332,6 +348,17 @@ clock
 
 ---
 
+### `clock sync`
+
+Syncs the clock with the remote device (e.g. companion / T-Deck).
+
+**Usage:**
+```
+clock sync
+```
+
+---
+
 ### `get / set direct.txdelay`
 
 Retransmit delay factor for direct traffic (0–2). **Default:** `0.2`
@@ -364,6 +391,32 @@ Maximum flood hop count (0–64). **Default:** `64`
 ```
 get flood.max
 set flood.max 5
+```
+
+---
+
+### `get / set flood.max.advert`
+
+Maximum flood hop count (0–64) for advert packets. **Default:** `8`
+
+**Usage:**
+```
+get flood.max.advert
+set flood.max.advert 8
+```
+
+---
+
+### `get / set flood.max.unscoped`
+
+Maximum flood hop count (0–64) for packets without a scope (no region set). **Default:** `64` (`0xFF` means unset and tracks `flood.max` until set).
+
+An alternative to `region denyf *`: a lower value such as `3` allows local unscoped messages while limiting noisy neighbors flooding a local region.
+
+**Usage:**
+```
+get flood.max.unscoped
+set flood.max.unscoped 3
 ```
 
 ---
@@ -522,6 +575,17 @@ neighbors
 
 ---
 
+### `discover.neighbors`
+
+(Repeater only) Discovers zero-hop neighbors.
+
+**Usage:**
+```
+discover.neighbors
+```
+
+---
+
 ### `get / set owner.info`
 
 Owner information text. **Default:** &lt;blank&gt;. `|` is translated to newlines. Requires firmware 1.12+.
@@ -628,7 +692,9 @@ set radio 915.8,62.5,7,5
 
 ### `get / set radio.rxgain`
 
-(SX1262/SX1268 builds only) RX boosted gain: `on` or `off`.
+(SX12xx and LR1110, firmware v1.14.1+) RX boosted gain: `on` or `off`. **Default:** `on`.
+
+**Note:** If you upgraded to 1.14.1 without erasing flash, this setting may be `off` due to a preference migration quirk.
 
 **Usage:**
 ```
@@ -822,6 +888,49 @@ region
 
 ---
 
+### `region default` / `region default {name|<null>}`
+
+Views or sets the default scope region for this node. **Parameters:** `name` — Region name, or `<null>` to reset/clear.
+
+**Usage:**
+```
+region default
+region default MyRegion
+region default <null>
+```
+
+---
+
+### `region def <token> [<token> ...]`
+
+Defines a region hierarchy on a single line. A logical **cursor** starts at the wildcard `*`.
+
+**Tokens:**
+- **`name`** — Create `name` as a child of the current cursor (like `region put name`). Cursor moves to `name`.
+- **`name|jump`** (or `name,jump`) — Create `name` as a child of the current cursor, then move the cursor to `jump` (must already exist). Use this to pop back up and start another branch.
+
+Each created region defaults to flood-allowed. Reply is the resulting tree (same format as bare `region`); review before `region save`. On error (`Err - ...`), regions placed before the failure remain. Does not clear the existing tree — existing names get their parent updated. Serial line limit is **160 characters**; for larger trees, split across commands (cursor resets to `*` between commands).
+
+**Usage:**
+```
+region def a b c d e
+region save
+```
+
+Branched tree (`a` → `b` → `c`/`d`, and `b` → `e` → `f`):
+```
+region def a b c d|b e f
+region save
+```
+
+Flat list (each region a child of `*`):
+```
+region def a|* b|* c|* d|* e|* f
+region save
+```
+
+---
+
 ### `region allowf <name>`
 
 Allows a region. **Parameters:** `name` — Region name or `*` for wildcard. On wildcard `*`, allows packets without region transport codes.
@@ -994,7 +1103,9 @@ Global flooding with regional hierarchy.
 
 ### `gps` / `gps <state>`
 
-Views or changes GPS state. **Parameters:** `state` — `on` | `off`. **Default:** `off`. When enabled, output format: `{status}, {fix}, {sat count}`
+Views or changes GPS state. **Parameters:** `state` — `on` | `off`. **Default:** `off`.
+
+**Output:** `off` when GPS hardware is disabled; when enabled: `on, {active|deactivated}, {fix|no fix}, {sat count} sats`.
 
 **Usage:**
 ```
@@ -1044,27 +1155,12 @@ gps sync
 
 ### `powersaving` / `powersaving <state>`
 
-Views or changes the power saving flag. **Parameters:** `state` — `on` | `off`. **Default:** `on`. When enabled, device enters sleep between radio transmissions.
+Views or changes the power saving flag. **Parameters:** `state` — `on` | `off`. **Default:** `off`. When enabled, device enters sleep between radio transmissions.
 
 **Usage:**
 ```
 powersaving
 powersaving on
-```
-
----
-
-## Commands via T-Deck Only
-
-*(Alphabetical.)*
-
-### `clock sync`
-
-Syncs the device's clock with the T-Deck's clock. Available when using a T-Deck.
-
-**Usage:**
-```
-clock sync
 ```
 
 ---
