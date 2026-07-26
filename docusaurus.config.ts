@@ -79,6 +79,7 @@ const config: Config = {
       logo: {
         alt: 'West Coast Mesh Logo',
         src: 'img/wcmesh-logo.png',
+        href: 'https://wcmesh.com',
       },
       items: [
         // {
