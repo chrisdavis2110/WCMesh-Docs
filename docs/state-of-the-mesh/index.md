@@ -1,6 +1,6 @@
 # State of the Mesh
 
-## [Q2 2026](q2.md) 7/26/2026
+## [Q2 2026](q2-2026.md) 7/26/2026
 
 1. Upgrade to at least 1.15.0 (1.14.1 had some bugs)
 2. `set path.hash.mode {1|2}` on repeaters only
@@ -11,7 +11,7 @@
 7. Observers should point to `mqtt.wcmesh.com`
 
 
-## [Q1 2026](q1.md) 4/12/2026
+## [Q1 2026](q1-2026.md) 4/12/2026
 
 1. Upgrade to 1.14.1
 2. `set path.hash.mode {1|2}` on repeaters only
