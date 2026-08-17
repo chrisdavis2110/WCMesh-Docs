@@ -25,3 +25,4 @@ Below are recommended settings to set on repeaters:
 |`set loop.detect moderate`|Tells repeater to look for its ID in the path before forwarding packet|
 |`set flood.advert.interval 47`| Sets advert interval to 47h. Higher the better|
 |`set advert.interval 0`|Turns off direct adverts|
+|`set owner.info {information}`|Sets owner info so guests can see who owns the repeater|

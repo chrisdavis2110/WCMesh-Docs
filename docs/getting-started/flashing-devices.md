@@ -57,3 +57,4 @@ Files labels with `merged` will erase and flash the firmware onto devices. Files
 Now that your device is flashed, choose your next step based on the device role you selected:
 
 - **Repeater or Room Server**: [Set up your repeater or room server](./setting-up-repeater.md)
+- **Companion**: [MeshCore App Guide](../meshcore-app/index.md)

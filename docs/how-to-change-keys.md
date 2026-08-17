@@ -22,10 +22,6 @@ Go to the appropriate #repeater-control channel for your region:
 - **Central Valley**: [Central Valley Repeater Control](https://discord.com/channels/1350515855942881442/1454500129628487784)
 - **Central Coast**: [Central Coast Repeater Control](https://discord.com/channels/1350515855942881442/1473742188402970698)
 
-:::info
-ALL PREFIXES IN SOCAL HAVE BEEN TAKEN. ONCE WE MOVE TO 2 BYTE, MORE WILL OPEN UP
-:::
-
 Run the `/open` command to find an open 2 character prefix (1 byte) for your new key.
 
 Run the `/prefix` or `/stats` command to check if another device is using the prefix you want.
