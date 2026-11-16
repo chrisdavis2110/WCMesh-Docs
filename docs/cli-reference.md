@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 20
 ---
 
 # Repeater & Room Server CLI Reference
@@ -61,7 +61,7 @@ log
 
 Sets the frequency in MHz. **Serial only.** Requires reboot to apply.
 
-**Parameters:** `frequency` — Frequency in MHz. **Default:** `869.525`
+**Parameters:** `frequency` — Frequency in MHz. **Default:** `869.618`
 
 **Usage:**
 ```
@@ -134,12 +134,14 @@ set adc.multiplier 1.0
 
 ### `get / set advert.interval`
 
-Zero-hop advert interval in minutes (rounded to multiple of 2; range 60–240). **Default:** `0`
+Zero-hop advert interval in minutes (rounded down to a multiple of 2; range 60–240). **Default:** `2` on a factory-fresh node, then `0` (disabled) once configured.
+
+A new install ships with a 2-minute zero-hop advert interval. Saving any setting resets an interval below the 60-minute minimum to `0`, on the assumption that the node has now been deliberately configured. To keep zero-hop adverts running, set an explicit value in the 60–240 range.
 
 **Usage:**
 ```
 get advert.interval
-set advert.interval 30
+set advert.interval 60
 ```
 
 ---
@@ -303,6 +305,18 @@ get bootloader.ver
 
 ---
 
+### `get / set cad`
+
+Enable or disable hardware Channel Activity Detection (CAD). When enabled, the radio scans before transmitting and defers if the channel is busy. Runs independently of `int.thresh` — either, both, or none may be active. **Parameters:** `on` | `off`. **Default:** `off`
+
+**Usage:**
+```
+get cad
+set cad on
+```
+
+---
+
 ### `clear stats`
 
 Clears stats counters.
@@ -361,7 +375,7 @@ clock sync
 
 ### `get / set direct.txdelay`
 
-Retransmit delay factor for direct traffic (0–2). **Default:** `0.2`
+Retransmit delay factor for direct traffic (0–2). Same collision-avoidance window as `txdelay`, applied to direct (non-flood, routed) traffic. **Default:** `0.3` (Repeater), `0.2` (Room Server, Sensor)
 
 **Usage:**
 ```
@@ -373,7 +387,7 @@ set direct.txdelay 1.2
 
 ### `get / set flood.advert.interval`
 
-Flood advert interval in hours (3–168). **Default:** `12` (Repeater), `0` (Sensor)
+Flood advert interval in hours (3–168). **Default:** `47` (Repeater, Room Server), `0` / disabled (Sensor)
 
 **Usage:**
 ```
@@ -541,7 +555,7 @@ set multi.acks 1
 
 ### `get / set name`
 
-Node name. **Set by build flag:** `ADVERT_NAME`. Max length: 24 bytes if location set, 32 otherwise. Emoji/unicode may use more than one byte.
+Node name. **Set by build flag:** `ADVERT_NAME`. Advertised names can use up to 23 bytes when location is included and 31 bytes otherwise. Emoji/Unicode may take more than one byte; names that exceed the available advert space are truncated at a valid UTF-8 boundary.
 
 **Usage:**
 ```
@@ -680,7 +694,7 @@ get pwrmgt.support
 
 ### `get / set radio`
 
-Radio parameters: `get radio` or `set radio <freq>,<bw>,<sf>,<cr>`. **Parameters:** freq (MHz), bw (kHz), sf (5–12), cr (5–8). **Set by build flag:** `LORA_FREQ`, `LORA_BW`, `LORA_SF`, `LORA_CR`. **Default:** `869.525,250,11,5`. Requires reboot to apply.
+Radio parameters: `get radio` or `set radio <freq>,<bw>,<sf>,<cr>`. **Parameters:** freq (MHz), bw (kHz), sf (5–12), cr (5–8). **Set by build flag:** `LORA_FREQ`, `LORA_BW`, `LORA_SF`, `LORA_CR`. **Default:** `869.618,62.5,8,5`. Requires reboot to apply.
 
 **Usage:**
 ```
@@ -690,11 +704,40 @@ set radio 915.8,62.5,7,5
 
 ---
 
+### `get / set radio.fem.rxgain`
+
+LoRa FEM receive-path gain on supported boards: `on` or `off`. Controls the external LoRa FEM receive-path LNA where available. Separate from `radio.rxgain`, which controls the radio chip receive gain mode.
+
+**Usage:**
+```
+get radio.fem.rxgain
+set radio.fem.rxgain on
+```
+
+---
+
+### `get / set radio.fem.txgain`
+
+LoRa FEM transmit-path gain on supported boards: `on` or `off`. Controls a software-selectable external LoRa FEM transmit gain where available.
+
+**Notes:**
+- On Station G3, remove the PA PL1 jumper to allow software control. `on` selects PA PL1 high/short and `off` selects PA PL1 low/open. The PA PL2 hardware jumper determines whether this switches between power levels 1/3 or 2/4.
+- Choose an operating level and SX1262 transmit power that comply with local RF limits and the Station G3 power-supply requirements.
+- The setting is saved immediately, but on Station G3 the level is applied at the start of the next transmit so the PA supply rail is never re-targeted while the PA is driven. `get` reports the configured state, which may lead the hardware until the node next transmits.
+
+**Usage:**
+```
+get radio.fem.txgain
+set radio.fem.txgain on
+```
+
+---
+
 ### `get / set radio.rxgain`
 
-(SX12xx and LR1110, firmware v1.14.1+) RX boosted gain: `on` or `off`. **Default:** `on`.
+(SX12xx and LR1110, firmware v1.14.1+) RX boosted gain: `on` or `off`.
 
-**Note:** If you upgraded to 1.14.1 without erasing flash, this setting may be `off` due to a preference migration quirk.
+**Note:** If you upgraded from an older version to 1.14.1 without erasing flash, this setting is `off` because of a preference migration quirk.
 
 **Usage:**
 ```
@@ -1161,6 +1204,25 @@ Views or changes the power saving flag. **Parameters:** `state` — `on` | `off`
 ```
 powersaving
 powersaving on
+```
+
+---
+
+## Ethernet
+
+*(When Ethernet support is compiled in. Available on RAK4631 boards with a RAK13800 / W5100S Ethernet module. Use `_ethernet` firmware variants such as `RAK_4631_repeater_ethernet`.)*
+
+### `eth.status`
+
+Views Ethernet connection status. Available on repeater and room server firmware only (companion radio ethernet firmware does not expose a CLI).
+
+**Output:** `ETH: <ip>:<port>` when connected (e.g. `ETH: 192.168.1.50:23`); `ETH: not connected` when Ethernet is not active.
+
+**Notes:** The Ethernet interface obtains an IP via DHCP on boot. A TCP server listens on port 23 by default for CLI connections — use any TCP client (`nc`, PuTTY, etc.) to access the same CLI available over serial.
+
+**Usage:**
+```
+eth.status
 ```
 
 ---

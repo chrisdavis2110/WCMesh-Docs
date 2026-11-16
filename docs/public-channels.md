@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 40
 ---
 
 # Public Channels
@@ -20,15 +20,9 @@ Your friendly neighborhood robot
 
 ![meshbud channel](./assets/public_channels/meshbud.png)
 
-## volcano
-San Diego based mesh bot
-
-`ac89b14740496815cf2ccc99c3522330`
-
-![volcano channel](./assets/public_channels/volcano.png)
 
 ## emergency
-Emergency notifications and chat
+Emergency notifications DO NOT CHAT HERE. Leave open for real emergencies
 
 `e1ad578d25108e344808f30dfdaaf926`
 

@@ -1,6 +1,6 @@
 {
   "label": "OTA Updates",
-  "position": 7,
+  "position": 35,
   "link": {
     "type": "doc",
     "id": "ota-updates/index"

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 45
 ---
 
 # MQTT Broker
@@ -42,3 +42,12 @@ If you want to continue feeding LetsMesh, add `mqtt.wcmesh.com` as an additional
 `mqtt.wcmesh.com` is a **write-only** broker. Observers can publish to it, but you cannot subscribe for your own applications.
 
 If you need MQTT data for your own apps, contact us for read access on `mqtt2.wcmesh.com`.
+
+## App-specific instructions
+
+App-by-app setup guides will be added here. Until then, use the connection details above with your observer or MQTT client.
+
+### gessaman fw example
+`set mqtt4.preset custom`
+`set mqtt4.server wss://mqtt.wcmesh.com:443`
+`set mqtt4.audience mqtt.wcmesh.com`

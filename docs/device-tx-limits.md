@@ -1,6 +1,6 @@
 ---
 id: tx-limits
-sidebar_position: 5
+sidebar_position: 25
 ---
 
 # Device TX Limits
@@ -94,3 +94,105 @@ These list the tx setting in the radio you need to set to get a desired output p
 |17|35.5 dbm|
 |18|36 dbm|
 |19|36.5 dbm|
+
+## Station G3
+
+### Power Level 1
+|TX setting|Output|
+|---|---|
+|2|16.6 dbm|
+|3|17.6 dbm|
+|4|18.7 dbm|
+|5|19.7 dbm|
+|6|20.7 dbm|
+|7|21.7 dbm|
+|8|22.6 dbm|
+|9|23.6 dbm|
+|10|24.4 dbm|
+|11|25.3 dbm|
+|12|26.1 dbm|
+|13|26.9 dbm|
+|14|27.7 dbm|
+|15|28.4 dbm|
+|16|29.2 dbm|
+|17|29.8 dbm|
+|18|30.5 dbm|
+|19|31.1 dbm|
+|20|31.7 dbm|
+|21|32.3 dbm|
+|22|32.8 dbm|
+
+### Power Level 2
+|TX setting|Output|
+|---|---|
+|2|17.1 dbm|
+|3|18.2 dbm|
+|4|19.2 dbm|
+|5|20.3 dbm|
+|6|21.3 dbm|
+|7|22.2 dbm|
+|8|23.2 dbm|
+|9|24.1 dbm|
+|10|25.0 dbm|
+|11|25.9 dbm|
+|12|26.8 dbm|
+|13|27.6 dbm|
+|14|28.4 dbm|
+|15|29.2 dbm|
+|16|30.0 dbm|
+|17|30.7 dbm|
+|18|31.4 dbm|
+|19|32.1 dbm|
+|20|32.8 dbm|
+|21|33.5 dbm|
+|22|34.1 dbm|
+
+### Power Level 3
+|TX setting|Output|
+|---|---|
+|2|18.1 dbm|
+|3|19.1 dbm|
+|4|20.1 dbm|
+|5|21.1 dbm|
+|6|22.1 dbm|
+|7|23.1 dbm|
+|8|24.0 dbm|
+|9|24.9 dbm|
+|10|25.9 dbm|
+|11|26.8 dbm|
+|12|27.6 dbm|
+|13|28.5 dbm|
+|14|29.4 dbm|
+|15|30.2 dbm|
+|16|31.0 dbm|
+|17|31.8 dbm|
+|18|32.6 dbm|
+|19|33.4 dbm|
+|20|34.2 dbm|
+|21|34.9 dbm|
+|22|35.6 dbm|
+
+### Power Level 4
+|TX setting|Output|
+|---|---|
+|2|18.5 dbm|
+|3|19.5 dbm|
+|4|20.4 dbm|
+|5|21.4 dbm|
+|6|22.3 dbm|
+|7|23.3 dbm|
+|8|24.2 dbm|
+|9|25.1 dbm|
+|10|26.1 dbm|
+|11|27.0 dbm|
+|12|27.9 dbm|
+|13|28.8 dbm|
+|14|29.7 dbm|
+|15|30.6 dbm|
+|16|31.5 dbm|
+|17|32.4 dbm|
+|18|33.3 dbm|
+|19|34.2 dbm|
+|20|35.1 dbm|
+|21|36.0 dbm|
+|22|36.8 dbm|
