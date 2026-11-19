@@ -189,3 +189,107 @@ WatchDuty app reports
 `ed94d36c3ba4afca4318eeeff2b2d7f2`
 
 ![watchduty channel](./assets/public_channels/watchduty.png)
+
+## ares
+The Amateur Radio Emergency Service is a volunteer corps of licensed amateur radio operators who provide backup emergency and public service communications when standard infrastructure fails.
+
+`44419e394cde859e45710f288db939a8`
+
+## socal
+Southern California region
+
+`f4018307615ac79d2e5ef17bb44654d4`
+
+## pong
+
+`7d16c9d905aaf9edbe222bab3d9fe4ac`
+
+## riverside
+Local chat for Riverside County
+
+`c6aaf869d744f1f4e2de3d5d4f7bb5c8`
+
+## beach
+Beach communities/surf reports?
+
+`ee1cf5d1e222d612b6b0856e3a59f997`
+
+## emcomm
+Another emcomm channel
+
+`a9a49340642dfc4c562d7849b7c8a258`
+
+## reticulum
+Cryptographic-based networking protocol stack using off-the-shelf hardware
+
+`673bf1de8675dfabd17f90376d45e8d2`
+
+## gmrs
+General Mobile Radio Service
+
+`2ad811e84ab4ad0e3a648d8fcf3d650a`
+
+## weather
+Bot usage: WX <ZIP code>
+
+`88f502554fee92a1625cfb311546e7cb`
+
+## offgrid
+Off-grid preparedness and remote comms
+
+`aaa26662bebf122262692d0bca61dcef`
+
+## anaheim
+Local chat for Anaheim
+
+`0dc436cfdc7aa940f8149525a22b90bd`
+
+## kensington
+Local chat for Kensington
+
+`088f07e13c2bbfdc20c8268b62403a06`
+
+## murrieta
+Local chat for Murrieta
+
+`550cdaf03823961d039e3630799776ac`
+
+## arcadia
+Local chat for Arcadia
+
+`7f34d9a13e5a70d1d8969a6eb4b5f8d6`
+
+## marine
+We're on a boat
+
+`7f4b40aac63642805a54a959beb07694`
+
+## mexicali
+Local chat for Mexicali
+
+`f8e5cd3b6b1a3dc569e44e3fe1477ad2`
+
+## cb
+Citizens band radio
+
+`a35b5f87bbb67859a02e7666c823de7a`
+
+## calmesh
+California statewide mesh community chat
+
+`cd939b8d8439654b9a8435a44d56990d`
+
+## skywarn
+National Weather Service storm spotter net
+
+`46e8175d5a3b373985eb471a3ad479f8`
+
+## irvine
+Local chat for Irvine
+
+`9fef1a88ee552a2154059fcec6b0dd45`
+
+## vannuys
+Local chat for Van Nuys
+
+`4da121dbcd9e815f1bfcfbbbf6ac1143`
