@@ -293,3 +293,13 @@ Local chat for Irvine
 Local chat for Van Nuys
 
 `4da121dbcd9e815f1bfcfbbbf6ac1143`
+
+##antelopevalley
+Local chat for Antelope Valley
+
+`e21d92be71bb5cca35ee5058d4c21fba`
+
+##highdesert
+Local chat for the elevated vernacular region in the western Mojave Desert
+
+`e21d92be71bb5cca35ee5058d4c21fba`
