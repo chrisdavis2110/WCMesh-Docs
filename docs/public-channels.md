@@ -294,12 +294,12 @@ Local chat for Van Nuys
 
 `4da121dbcd9e815f1bfcfbbbf6ac1143`
 
-##antelopevalley
+## antelopevalley
 Local chat for Antelope Valley
 
 `e21d92be71bb5cca35ee5058d4c21fba`
 
-##highdesert
+## highdesert
 Local chat for the elevated vernacular region in the western Mojave Desert
 
 `114221da9d47ab2cd72d2f4566ebbc15`
