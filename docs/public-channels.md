@@ -148,8 +148,13 @@ Local chat for San Diego County
 
 ![sandiego channel](./assets/public_channels/sandiego.png)
 
-## sbcountymesh
+## santabarbara
 Local chat for Santa Barbara County
+
+`14a05fe105acc3bfeb4f5a1a9848125b`
+
+## sbcountymesh
+Another local chat for Santa Barbara County
 
 `76cf469b93e61bd4db1d4dbb4d32a7fb`
 
@@ -234,6 +239,11 @@ Bot usage: WX <ZIP code>
 
 `88f502554fee92a1625cfb311546e7cb`
 
+## wx
+Another weather bot channel
+
+`472dd8595b8fd0ab542b3e86a379a620`
+
 ## offgrid
 Off-grid preparedness and remote comms
 
@@ -303,3 +313,38 @@ Local chat for Antelope Valley
 Local chat for the elevated vernacular region in the western Mojave Desert
 
 `114221da9d47ab2cd72d2f4566ebbc15`
+
+## temecula
+Local chat for Temecula
+
+`7c058dcbdf244af51a7492db3c108852`
+
+## startrek
+Engage
+
+`922ff18ba6bef3fcf5d1cb21368cbb6b`
+
+## longbeach
+Local chat for Long Beach
+
+`cec1304d2c963ac79a9b63a2708787e6`
+
+## yucaipa
+Local chat for Yucaipa
+
+`d4e7eaa11e8c4a425de3a67de3ce7582`
+
+## shtf
+Shiitake Hitting The Fan
+
+`9321638017bd7f42ca4468726cd06893`
+
+## general
+Another general chit chat channel
+
+`4c49f3f24629f5ee4ad5b3965db47985`
+
+## ramona
+Local chat for Ramona
+
+`9fc4456faf616eab92aed8bfb3919cc3`
