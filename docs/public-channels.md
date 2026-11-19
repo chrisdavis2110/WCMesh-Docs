@@ -302,4 +302,4 @@ Local chat for Antelope Valley
 ##highdesert
 Local chat for the elevated vernacular region in the western Mojave Desert
 
-`e21d92be71bb5cca35ee5058d4c21fba`
+`114221da9d47ab2cd72d2f4566ebbc15`
