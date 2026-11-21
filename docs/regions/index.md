@@ -84,4 +84,4 @@ One region can be designated **home** for the node. This is used for display (e.
 - A packet has **one** scope. It does not belong to “west and socal” at once.
 
 
-For CLI details (region put, allowf, denyf, home, load, save, etc.), see [CLI Commands – Region Management](../cli-reference.md#region-management-repeater-only).
+For CLI details (region put, allowf, denyf, home, load, save, etc.), see [CLI Commands – Region Management](../cli-reference.md#region-management).
