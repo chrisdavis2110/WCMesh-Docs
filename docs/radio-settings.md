@@ -26,3 +26,5 @@ Below are recommended settings to set on repeaters:
 |`set flood.advert.interval 47`| Sets advert interval to 47h. Higher the better|
 |`set advert.interval 0`|Turns off direct adverts|
 |`set owner.info {information}`|Sets owner info so guests can see who owns the repeater|
+
+Recommended region hierarchy for Southern California: `*` → `us` → `california` → `socal` → counties and other local areas. You can reference [this map](https://regions.wcmesh.com) or you can set up and copy the commands into your repeater using [this page](https://matkam.github.io/meshcore-settings/#socal). Think about how your repeater services the area, and which local public hashtag channels will travel through your repeater and select the proper regions. 
