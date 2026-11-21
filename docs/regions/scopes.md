@@ -1,4 +1,5 @@
 ---
+slug: /regions/adding-scopes
 sidebar_position: 2
 ---
 

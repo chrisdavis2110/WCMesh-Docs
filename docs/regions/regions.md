@@ -1,4 +1,5 @@
 ---
+slug: /regions/adding-regions
 sidebar_position: 1
 ---
 
