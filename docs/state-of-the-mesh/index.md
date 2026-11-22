@@ -1,5 +1,10 @@
 # State of the Mesh
 
+## [Q3 2026](q3-2026.md) 11/15/2026
+
+1. Repeater settings are being changed
+2. Start implementing regions on your repeaters
+
 ## [Q2 2026](q2-2026.md) 7/26/2026
 
 1. Upgrade to at least 1.15.0 (1.14.1 had some bugs)
